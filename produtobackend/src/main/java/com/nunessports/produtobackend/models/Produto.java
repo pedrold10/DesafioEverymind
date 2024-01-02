@@ -15,9 +15,8 @@ import lombok.Data;
 public class Produto{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long produtoId;
-    private String nome;
     private Long codigo;
+    private String nome;
     private String descricao;
     private Double preco;
 

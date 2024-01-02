@@ -1,7 +1,7 @@
 package com.nunessports.produtobackend.services;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,9 @@ public class ProdutoService {
     public ProdutoService(ProdutoRepository produtoRepository){
         this.produtoRepository = produtoRepository;
     }
-    public Optional<Produto> produtoPorId(Long id){
-        return produtoRepository.findById(id);
+    public Produto produtoPorId(Long id){
+        return produtoRepository.findById(id)
+            .orElseThrow(() -> new NoSuchElementException("Produto não encontrado com o ID: " + id));
     }
     
     public List<Produto> listProduto(){
