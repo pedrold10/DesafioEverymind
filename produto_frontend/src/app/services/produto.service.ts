@@ -16,7 +16,7 @@ export class ProdutoService {
     
   }
 
-  obterProduto(codigo: Number): Observable<Produto>{
+  obterProduto(codigo: string): Observable<Produto>{
     return this.http.get<Produto>(`${this.baseApiUrl}/${codigo}`)
   }
 
@@ -28,5 +28,14 @@ export class ProdutoService {
     .pipe(
       map((response: any)=> response.data)
     )
+  }
+
+  editarProduto(codigo: string, editarProdutoRequest: Produto): Observable<Produto>{
+    return this.http.put<Produto>(`${this.baseApiUrl}/${codigo}`, editarProdutoRequest)
+
+  }
+
+  deletarProduto(codigo: string): Observable<Produto>{
+    return this.http.delete<Produto>(`${this.baseApiUrl}/${codigo}`)
   }
 }

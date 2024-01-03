@@ -13,10 +13,9 @@
             <td>{{produto.nome}}</td>
             <td>{{produto.descricao}}</td>
             <td>R${{produto.preco.toFixed(2).toString().replace(".", ",")}}</td>
-            <td><button class="btn btn-primary"><mat-icon>edit</mat-icon></button></td>
             <td>
-                <button class="btn btn-danger">
-                    <mat-icon>delete</mat-icon>
+                <button class="btn btn-primary" [routerLink]="['/editar', produto.codigo]">
+                    <mat-icon>edit</mat-icon>
                 </button>
             </td>
         </tr>

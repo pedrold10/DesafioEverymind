@@ -10,7 +10,7 @@ import { Produto } from '../models/Produto';
 })
 export class CadastrarProdutoComponent implements OnInit{
   adicionarProdutoRequest: Produto = {
-    codigo: 0,
+    codigo: "",
     nome: "",
     descricao: "",
     preco: 0

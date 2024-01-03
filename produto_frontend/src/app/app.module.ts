@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { FormsModule } from '@angular/forms';
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarProdutosComponent,
-    CadastrarProdutoComponent
+    CadastrarProdutoComponent,
+    EditarProdutoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,38 @@
+<div class="container my-5">
+    <h1 class="mb-3">Adicionar novo produto</h1>
+    <form #form="ngForm" (ngSubmit)="editarProduto()">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-3">
+                    <label for="inputNome" class="form-label">Nome</label>
+                    <input type="text" name="nome" 
+                    id="inputNome" class="form-control border-form"
+                    [(ngModel)] = "editarProdutoRequest.nome">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <label for="inputDescricao" class="form-label">Descrição</label>
+                <textarea name="inputDescricao" id="inputDescricao" cols="30" rows="5"
+                class="form-control border-form" [(ngModel)]="editarProdutoRequest.descricao"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="inputPreco" class="form-label">Preço(R$)</label>
+                <input type="number" name="inputPreco" id="inputPreco"
+                class="form-control border-form" [(ngModel)]="editarProdutoRequest.preco">
+            </div>
+        </div><br>
+        <button type="submit" class="btn btn-primary">
+            <mat-icon>send</mat-icon>
+        </button>
+        
+        <button class="btn btn-danger" (click)="deletarProduto(editarProdutoRequest.codigo)">
+            <mat-icon>delete</mat-icon>
+        </button>
+        
+    </form>
+</div>
