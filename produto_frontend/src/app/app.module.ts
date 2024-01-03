@@ -6,18 +6,22 @@ import { ListarProdutosComponent } from './listar-produtos/listar-produtos.compo
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarProdutosComponent
+    ListarProdutosComponent,
+    CadastrarProdutoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

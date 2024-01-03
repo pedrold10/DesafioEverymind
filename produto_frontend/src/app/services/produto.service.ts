@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Produto } from '../models/Produto';
 
@@ -22,5 +22,11 @@ export class ProdutoService {
 
   listarProdutos(): Observable<Produto[]>{
     return this.http.get<Produto[]>(`${this.baseApiUrl}`)
+  }
+  adicionarProduto(adicionarProdutoRequest: Produto): Observable<Produto[]>{
+    return this.http.post<Produto>(`${this.baseApiUrl}`, adicionarProdutoRequest)
+    .pipe(
+      map((response: any)=> response.data)
+    )
   }
 }
